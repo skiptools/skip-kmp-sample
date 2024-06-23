@@ -2,15 +2,16 @@
 // under the terms of the GNU Lesser General Public License 3.0
 // as published by the Free Software Foundation https://fsf.org
 
-// tantamount to: import multi.platform.library.__
+// Skip transpiles this to: import multi.platform.library.*
 import MultiPlatformLibrary
 
 public class SkipKMPSampleModule {
     static func stringFunction() -> String {
+        // an oddity of the Kotlin/Native ObjC target is that it doesn't map object functions to statics, but instead to an instance function on a `shared` singleton
         #if SKIP
-        Singleton.stringFunction()
+        return Singleton.stringFunction()
         #else
-        Singleton.shared.stringFunction()
+        return Singleton.shared.stringFunction()
         #endif
     }
 
@@ -25,4 +26,26 @@ public class SkipKMPSampleModule {
         let enumC = SampleEnum.c
         return enumA.rawValue + enumB.rawValue + enumC.rawValue
     }
+
+    static func checkDiceRoller(diceCount: Int32, sideCount: Int32, uniqueRollsOnly: Bool = true) throws -> [Int32] {
+        let dr = DiceRoller()
+        let settings = DiceSettings(diceCount: diceCount, sideCount: sideCount, uniqueRollsOnly: uniqueRollsOnly)
+        let results = try dr.rollDice(settings: settings)
+        let resultArray: [Int32] = Array(results).map({ kotlinInt in
+            // this is a KotlinInt (NSNumber) in ObjC/Swift but a regular Int32 in Kotlin
+            #if SKIP
+            kotlinInt
+            #else
+            kotlinInt.int32Value
+            #endif
+        })
+        return resultArray
+    }
+
+    // needs @MainActor or else:
+    // *** Terminating app due to uncaught exception 'NSGenericException', reason: 'Calling Kotlin suspend functions from Swift/Objective-C is currently supported only on main thread'
+    @MainActor static func checkAsync(duration: Int64, value: String) async throws -> String {
+        try await SampleAsync().performSuspend(duration: duration, value: value)
+    }
+
 }

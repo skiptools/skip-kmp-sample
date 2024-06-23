@@ -21,6 +21,6 @@ let package = Package(
             "SkipKMPSample",
             .product(name: "SkipTest", package: "skip")
         ], resources: [.process("Resources")], plugins: [.plugin(name: "skipstone", package: "skip")]),
-        .binaryTarget(name: "MultiPlatformLibrary", url: "https://github.com/skiptools/kmp-library-sample/releases/download/0.1.3/MultiPlatformLibrary.xcframework.zip", checksum: "243befae81053e097c78ab177ebad9c15c1b49f66486dd4dad6cab4dd61ed88c")
+        .binaryTarget(name: "MultiPlatformLibrary", url: "https://github.com/skiptools/kmp-library-sample/releases/download/1.0.3/MultiPlatformLibrary.xcframework.zip", checksum: "73984311f5f3d0903e7dbe35632c6f0358989a85112859e33ef000193904a051")
     ]
 )
