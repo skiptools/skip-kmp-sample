@@ -6,7 +6,7 @@ settings:
   contents:
     - block: 'sourceControl'
       contents:
-        - block: 'gitRepository(java.net.URI.create("https://github.com/marcprux/kmp-library-sample.git"))'
+        - block: 'gitRepository(java.net.URI.create("https://github.com/skiptools/kmp-library-sample.git"))'
           contents:
             - 'producesModule("kmp-library-sample:multi-platform-library")'
 
