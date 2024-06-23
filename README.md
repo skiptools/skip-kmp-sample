@@ -2,7 +2,7 @@
 
 This is a [Skip](https://skip.tools) Swift/Kotlin library project that demonstrates 
 integration with Skip transpiled classes and a Kotlin multiplatform library.
-This package uses the [kmp-library-sample](https://github.com/skiptools/kmp-library-sample/releases)
+This package uses the [kmp-library-sample](https://github.com/skiptools/kmp-library-sample.git)
 library in two ways:
 
  - `Package.swift` depends on the `MultiPlatformLibrary.xcframework` which publishes the natively compiled Objective-C framework compiled from the Kotlin (see [Kotlin/Native as an Apple framework](https://kotlinlang.org/docs/apple-framework.html))
