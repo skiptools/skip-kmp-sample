@@ -14,7 +14,7 @@ build:
   contents:
     - block: 'dependencies'
       contents:
-        - 'implementation("kmp-library-sample:multi-platform-library:1.0.3")'
+        - 'implementation("kmp-library-sample:multi-platform-library:1.0.4")'
         #- 'implementation("kmp-library-sample:multi-platform-library") { version { branch = "main" } }'
 
 

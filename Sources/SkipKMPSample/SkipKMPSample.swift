@@ -42,9 +42,11 @@ public class SkipKMPSampleModule {
         return resultArray
     }
 
-    // needs @MainActor or else:
+    // needs @MainActor
+    // or else set gradle.properties kotlin.native.binary.objcExportSuspendFunctionLaunchThreadRestriction=none
+    // or else:
     // *** Terminating app due to uncaught exception 'NSGenericException', reason: 'Calling Kotlin suspend functions from Swift/Objective-C is currently supported only on main thread'
-    @MainActor static func checkAsync(duration: Int64, value: String) async throws -> String {
+    static func checkAsync(duration: Int64, value: String) async throws -> String {
         try await SampleAsync().performSuspend(duration: duration, value: value)
     }
 
