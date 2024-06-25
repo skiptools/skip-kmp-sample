@@ -9,12 +9,15 @@ settings:
         - block: 'gitRepository(java.net.URI.create("https://github.com/skiptools/kmp-library-sample.git"))'
           contents:
             - 'producesModule("kmp-library-sample:multi-platform-library")'
+        - block: 'gitRepository(java.net.URI.create("https://github.com/marcprux/kmp-library-sample2.git"))'
+          contents:
+            - 'producesModule("kmp-library-sample:multi-platform-library2")'
 
 build:
   contents:
     - block: 'dependencies'
       contents:
-        - 'implementation("kmp-library-sample:multi-platform-library:1.0.4")'
+        - 'implementation("kmp-library-sample:multi-platform-library:1.1.0")'
         #- 'implementation("kmp-library-sample:multi-platform-library") { version { branch = "main" } }'
 
 
