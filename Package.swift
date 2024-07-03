@@ -6,11 +6,11 @@ let package = Package(
     defaultLocalization: "en",
     platforms: [.iOS(.v16), .macOS(.v13), .tvOS(.v16), .watchOS(.v9), .macCatalyst(.v16)],
     products: [
-        .library(name: "SkipKMPSample", targets: ["SkipKMPSample"]),
+        .library(name: "SkipKMPSample", type: .dynamic, targets: ["SkipKMPSample"]),
     ],
     dependencies: [
-        .package(url: "https://source.skip.tools/skip.git", from: "0.8.55"),
-        .package(url: "https://source.skip.tools/skip-foundation.git", from: "0.6.12")
+        .package(url: "https://source.skip.tools/skip.git", from: "0.9.3"),
+        .package(url: "https://source.skip.tools/skip-foundation.git", from: "0.7.0")
     ],
     targets: [
         .target(name: "SkipKMPSample", dependencies: [
@@ -22,7 +22,7 @@ let package = Package(
             .product(name: "SkipTest", package: "skip")
         ], resources: [.process("Resources")], plugins: [.plugin(name: "skipstone", package: "skip")]),
         .binaryTarget(name: "MultiPlatformLibrary",
-            url: "https://github.com/skiptools/kmp-library-sample/releases/download/1.1.0/MultiPlatformLibrary.xcframework.zip",
-            checksum: "310016ff410211358690a463ab3215f850ddaeefe7d71ee956dc1785b44bc081")
+            url: "https://github.com/skiptools/kmp-library-sample/releases/download/1.2.0/MultiPlatformLibrary.xcframework.zip",
+            checksum: "f897a94f996fff8b75faff399a65d674479272d9927baf59cf032b9433954b83")
     ]
 )
