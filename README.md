@@ -1,6 +1,6 @@
 # SkipKMPSample
 
-This is a [Skip](https://skip.tools) Swift/Kotlin library project that demonstrates 
+This is a [Skip](https://skip.dev) Swift/Kotlin library project that demonstrates 
 integration with Skip transpiled classes and a Kotlin multiplatform library.
 This package uses the [kmp-library-sample](https://github.com/skiptools/kmp-library-sample.git)
 library in two ways:
@@ -19,7 +19,7 @@ See also:
 ## Building
 
 This project is a free Swift Package Manager module that uses the
-[Skip](https://skip.tools) plugin to transpile Swift into Kotlin.
+[Skip](https://skip.dev) plugin to transpile Swift into Kotlin.
 
 Building the module requires that Skip be installed using 
 [Homebrew](https://brew.sh) with `brew install skiptools/skip/skip`.
