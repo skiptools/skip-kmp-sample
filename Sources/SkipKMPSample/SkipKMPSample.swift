@@ -1,5 +1,4 @@
 // Copyright 2024 Skip
-// SPDX-License-Identifier: MPL-2.0
 // Skip transpiles this to: import multi.platform.library.*
 import MultiPlatformLibrary
 
